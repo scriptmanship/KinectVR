@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dfrrd</title>
+    <style>
+      body {
+        font: 16px/1.6 "Helvetica Neue", arial, sans-serif;
+        padding: 60px;
+      }
+      pre { font-size: 14px; line-height: 1.3 }
+      code .init { color: #2F6FAD }
+      code .string { color: #5890AD }
+      code .keyword { color: #8A6343 }
+      code .number { color: #2F6FAD }
+    </style>
+  </head>
+  <body>
+    <h1>Dfrrd</h1>
+    <p>
+      The Dfrrd test suite documentation generated with the <a href="http://visionmedia.github.com/mocha">Mocha</a> test framework.
+      Spies are provided by <a href="http://sinonjs.org/">Sinon.JS</a>
+    </p>    <section class="suite">
+      <h1>Examples (TODO)</h1>
+      <dl>
+        <dt>Basic example</dt>
+        <dd><pre><code>function sayHello() {
+  console.log(&quot;Hello world!&quot;);
+}
+
+Repeat(sayHello).every(100, 'ms').for(0.5, 'second').start.in(200);</code></pre></dd>
+        <dt>Live display of relative time with jQuery and moment.js</dt>
+        <dd><pre><code>jQuery(function() {
+  (function mockDOM() { // This is just for creating some example DOM elements
+    var ul = jQuery(&quot;&lt;ul&gt;&lt;/ul&gt;&quot;), now = (new Date().getTime()), elem_count = 100;
+    while (elem_count--) {;
+      ul.append(jQuery('&lt;li class=&quot;live-time&quot; data-timestamp=&quot;'+
+         (now+(Math.random()*100000)*(Math.random() &gt; 0.5 ? -1 : 1)) +
+        '&quot;&gt;&lt;/li&gt;'))
+    }
+    ul.appendTo(jQuery(&quot;body&quot;)); 
+  }());
+
+  var elems = jQuery(&quot;.live-time&quot;);
+  Repeat(function() {
+    elems.each(function(i, elem) {
+      elem = jQuery(elem);
+      var time = moment(elem.data(&quot;timestamp&quot;));
+      elem.html('Displaying '+ time.format(&quot;dddd, MMMM Do YYYY, h:mm:ss a&quot;) +' as &quot;&lt;b&gt;'+ time.fromNow()+'&lt;/b&gt;&quot;');
+    });
+  }).every(1000, 'ms').start.now();
+});</code></pre></dd>
+        <dt>Asynchronous polling with jQuery</dt>
+        <dd><pre><code>Repeat(function(done) {
+   jQuery.ajax({
+     url: 'http://www.example.com',
+     success: function(data) { console.log(data); },
+     complete: function() {
+       done(); // will wait for this to be called before continuing
+     }
+   });
+ })
+ .every(1, 'sec')
+ .for(2, 'minutes')
+ .start.in(3, 'secs');</code></pre></dd>
+        <dt>Monitoring changes in an objects' state with console.monitor</dt>
+        <dd><pre><code>console.monitor = function(object, property) {
+  var last_value = object[property];
+  return Repeat(function() {
+    var current_value = object[property];
+    if (last_value !== current_value) {
+      console.log('Property changed from &quot;'+last_value+'&quot; to &quot;'+current_value+'&quot;!');
+      last_value = current_value;
+    }
+    else {
+      console.log(&quot;No change&quot;);
+    }
+  });
+};
+
+var myObject = {someProperty: &quot;Something&quot;};
+console.monitor(myObject, 'someProperty').every(500, 'ms').for(10, 'seconds').start();
+setTimeout(function() {myObject.someProperty = &quot;Changed value&quot;}, 3000);</code></pre></dd>
+        <dt>Execute expensive operations asynchronously</dt>
+        <dd><pre><code>function saveDocument(id) {
+  var tasks = [openDocument, writeText, closeDocument, updateUI]; // these are the expensive functions
+  return Repeat(function() {
+      var task = tasks.shift();
+      task(id);
+    })
+    .async().until(function() {
+      return tasks.length == 0;
+    }).start.now();        
+}
+saveDocument(1);</code></pre></dd>
+        <section class="suite">
+          <h1>Promise support</h1>
+          <dl>
+            <dt>Basic example</dt>
+            <dd><pre><code>Repeat(function() { console.log(&quot;W00t&quot;); })
+  .every(1, 's')
+  .for(20, 's')
+  .start.now()
+  .then(function() {
+    console.log(&quot;I'm done w00t'n&quot;);
+  });</code></pre></dd>
+            <dt>Error handling and promise callbacks</dt>
+            <dd><pre><code>var onSuccess = function(results) {
+  console.log(&quot;All good&quot;, results);
+};
+var onFailure = function(exception) {
+  console.log(&quot;Error&quot;, exception);
+};
+var onProgress = function(result) {
+  console.log(&quot;Progress: &quot;, result);
+};
+
+var v = 0;
+Repeat(function() {
+    if (v++ &gt; 2) throw new Error(&quot;Ouch!&quot;);
+    return v;
+  })
+  .every(1, 's')
+  .for(10, 's')
+  .start()
+  .then(onSuccess, onFailure, onProgress);</code></pre></dd>
+            <dt>jQuery Deferred/Promise support</dt>
+            <dd><pre><code>var v = 0;
+var repeat = Repeat(function() {
+    if (v++ &gt; 2) throw new Error(&quot;Ouch!&quot;);
+    return v;
+  })
+  .every(1, 's')
+  .for(5, 's')
+  .start();
+
+repeat.then(function() { console.log('Resolved!'); });
+repeat.fail(function() { console.log('Rejected!'); });
+repeat.always(function() { console.log('Done! (either resolved or rejected)'); });</code></pre></dd>
+          </dl>
+        </section>
+        <section class="suite">
+          <h1>Compatibility</h1>
+          <dl>
+            <dt>Alternative syntax</dt>
+            <dd><pre><code>Repeat(function() {
+  console.log(&quot;I'm safe&quot;);
+ })
+ .every(2, 'sec')
+ .lasting(2, 'min')
+ .during(function() {return true})
+ .provided(function() { return Math.random() &gt; .5; })
+ .wait(5, 'sec');</code></pre></dd>
+            <dt>Less readable workaround (not recommended)</dt>
+            <dd><pre><code>Repeat(function() { console.log(&quot;Hello&quot;); })
+.every(2, 's')
+['for'](2, 'm')
+['if'](function() { return Math.random() &gt; .5; })
+['while'](function() { return true; })
+['in'](3, 's');</code></pre></dd>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <section class="suite">
+      <h1>Repeat works with jQuery</h1>
+      <dl>
+        <section class="suite">
+          <h1>Repeat.js</h1>
+          <dl>
+            <section class="suite">
+              <h1>Detects common pitfalls and throws an error accordingly</h1>
+              <dl>
+                <dt>Throws an error if no task is given or task is not a function</dt>
+                <dd><pre><code>return expect(Repeat().start).to.throwException(&quot;Don't know any task to run&quot;);</code></pre></dd>
+                <dt>Throws an error if trying to start a repetition that has already been started.</dt>
+                <dd><pre><code>var repeat;
+repeat = new Repeat(function() {}).twice();
+repeat.start();
+return expect(repeat.start).to.throwException(&quot;Already started&quot;);</code></pre></dd>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>Can run both synchronous and asynchronous</h1>
+              <dl>
+                <dt>runs the task synchronously if no delay is specified (with a call to every() or async())</dt>
+                <dd><pre><code>var counter, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+repeat.six.times().now();
+return expect(counter).to.eql(6);</code></pre></dd>
+                <dt>can explicitly be told to run asynchronously by calling async()</dt>
+                <dd><pre><code>var counter, promise, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+promise = repeat.async().three.times().now();
+expect(counter).to.eql(0);
+return promise.then(function() {
+  expect(counter).to.eql(3);
+  return done();
+});</code></pre></dd>
+                <dt>runs all tasks synchronously if no delay is specified</dt>
+                <dd><pre><code>var counter, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+repeat.six.times().now();
+return expect(counter).to.eql(6);</code></pre></dd>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>If stop condition is specified by calling while() or until()</h1>
+              <dl>
+                <dt>Will stop when the function passed to to while() returns false</dt>
+                <dd><pre><code>var counter, proceed, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+proceed = true;
+repeat[&quot;while&quot;](function() {
+  return proceed;
+});
+repeat.next();
+repeat.next();
+proceed = false;
+repeat.next();
+return expect(counter).to.eql(2);</code></pre></dd>
+                <dt>Will stop when function passed to until() returns true</dt>
+                <dd><pre><code>var counter, repeat, stop;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+stop = false;
+repeat.every(50, &quot;ms&quot;).until(function() {
+  return stop;
+}).start();
+after(110, function() {
+  return stop = true;
+});
+return after(160, function() {
+  expect(counter).to.eql(3);
+  return done();
+});</code></pre></dd>
+                <dt>Will execute only when function passed to if() returns true</dt>
+                <dd><pre><code>var counter, execute, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+execute = true;
+repeat[&quot;if&quot;](function() {
+  return execute;
+});
+repeat.next();
+expect(counter).to.eql(1);
+execute = false;
+repeat.next();
+expect(counter).to.eql(1);
+execute = true;
+repeat.next();
+return expect(counter).to.eql(2);</code></pre></dd>
+                <dt>Will execute only when function passed to unless() returns false</dt>
+                <dd><pre><code>var counter, repeat, skip;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+skip = false;
+repeat.unless(function() {
+  return skip;
+});
+repeat.next();
+expect(counter).to.eql(1);
+skip = true;
+repeat.next();
+expect(counter).to.eql(1);
+skip = false;
+repeat.next();
+return expect(counter).to.eql(2);</code></pre></dd>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>API</h1>
+              <dl>
+                <section class="suite">
+                  <h1>task()</h1>
+                  <dl>
+                    <dt>can be set by passing it as constructor parameter</dt>
+                    <dd><pre><code>var counter;
+counter = 0;
+Repeat(function() {
+  return counter++;
+}).once().now();
+return expect(counter).to.eql(1);</code></pre></dd>
+                    <dt>can be defined using the task function</dt>
+                    <dd><pre><code>var counter;
+counter = 0;
+Repeat().task(function() {
+  return counter++;
+}).once().now();
+return expect(counter).to.eql(1);</code></pre></dd>
+                    <dt>Calling task function will replace any previous registred tasks</dt>
+                    <dd><pre><code>var counter;
+counter = 0;
+Repeat(function() {}).task(function() {}).task(function() {
+  return counter++;
+}).once().now();
+return expect(counter).to.eql(1);</code></pre></dd>
+                  </dl>
+                </section>
+                <section class="suite">
+                  <h1>every()</h1>
+                  <dl>
+                    <dt>will replace previously registered intervals</dt>
+                    <dd><pre><code>var counter, repeat;
+counter = 0;
+repeat = Repeat(function() {
+  return counter++;
+}).every(1, &quot;ms&quot;).every(1, &quot;second&quot;);
+repeat.start();
+return after(100, function() {
+  expect(counter).to.eql(1);
+  return done();
+});</code></pre></dd>
+                    <dt>can be replaced at any time througout the lifetime of the repetition to change the frequency</dt>
+                    <dd><pre><code>var counter, repeat;
+counter = 0;
+repeat = Repeat(function() {
+  return counter++;
+}).every(50, 'ms');
+repeat.start();
+after(65, function() {
+  return repeat.every(100, &quot;ms&quot;);
+});
+after(10, function() {
+  return expect(counter).to.eql(1);
+});
+after(55, function() {
+  return expect(counter).to.eql(2);
+});
+after(100, function() {
+  return expect(counter).to.eql(2);
+});
+after(160, function() {
+  return expect(counter).to.eql(3);
+});
+return after(170, function() {
+  return repeat.cancel().then(function() {
+    return done();
+  });
+});</code></pre></dd>
+                  </dl>
+                </section>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>Provides an API to run tasks at any given time</h1>
+              <dl>
+                <dt>allows for manually executing task the given number of times by calling next()</dt>
+                <dd><pre><code>var counter, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+repeat.next();
+repeat.next();
+return expect(counter).to.eql(2);</code></pre></dd>
+                <dt>will stop when task has been called the number of times defined by calling times()</dt>
+                <dd><pre><code>var counter, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+});
+repeat.three.times();
+repeat.next();
+repeat.next();
+repeat.next();
+repeat.next();
+repeat.next();
+return expect(counter).to.eql(3);</code></pre></dd>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>for</h1>
+              <dl>
+                <dt>will not execute task after number of milliseconds specified by for() has passed</dt>
+                <dd><pre><code>var counter, repeat;
+counter = 0;
+repeat = new Repeat(function() {
+  return counter++;
+})[&quot;for&quot;](30, &quot;ms&quot;);
+after(10, function() {
+  return repeat.next();
+});
+after(20, function() {
+  return repeat.next();
+});
+after(50, function() {
+  return repeat.next();
+});
+after(50, function() {
+  return repeat.next();
+});
+return after(70, function() {
+  expect(counter).to.eql(2);
+  return repeat.stop().then(function() {
+    return done();
+  });
+});</code></pre></dd>
+              </dl>
+            </section>
+            <section class="suite">
+              <h1>It stops immediately if stop is invoked before started</h1>
+              <dl>
+                <dt>Will wait for asynchronous task to finish before proceeding</dt>
+                <dd><pre><code>var counter, repeat;
+counter = {
+  waiting: 0,
+  finished: 0
+};
+repeat = new Repeat(function(done) {
+  counter.waiting++;
+  return after(40, function() {
+    counter.finished++;
+    return done();
+  });
+});
+repeat.every(60, &quot;ms&quot;).now();
+after(30, function() {
+  expect(counter.waiting).to.eql(1);
+  return expect(counter.finished).to.eql(0);
+});
+after(50, function() {
+  expect(counter.waiting).to.eql(1);
+  return expect(counter.finished).to.eql(1);
+});
+after(110, function() {
+  expect(counter.waiting).to.eql(2);
+  return expect(counter.finished).to.eql(1);
+});
+return after(150, function() {
+  expect(counter.waiting).to.eql(2);
+  expect(counter.finished).to.eql(2);
+  return repeat.cancel().then(function() {
+    return test_done();
+  });
+});</code></pre></dd>
+              </dl>
+            </section>
+          </dl>
+        </section>
+      </dl>
+    </section>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $('code').each(function(){
+          $(this).html(highlight($(this).text()));
+        });
+      });
+
+      function highlight(js) {
+        return js
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/\/\/(.*)/gm, '<span class="comment">//$1</span>')
+          .replace(/('.*')/gm, '<span class="string">$1</span>')
+          .replace(/(\d+\.\d+)/gm, '<span class="number">$1</span>')
+          .replace(/(\d+)/gm, '<span class="number">$1</span>')
+          .replace(/\bnew *(\w+)/gm, '<span class="keyword">new</span> <span class="init">$1</span>')
+          .replace(/\b(function|new|throw|return|var|if|else)\b/gm, '<span class="keyword">$1</span>')
+      }
+    </script>
+  </body>
+</html>

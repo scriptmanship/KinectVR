@@ -1,0 +1,40 @@
+#!/usr/bin/env coffee
+http = require("http")
+fs = require("fs")
+path = require("path")
+coffee = require("coffee-script")
+
+contentTypes =
+  ".js": "text/javascript"
+  ".coffee": "text/javascript"
+  ".css": "text/css"
+  ".html": "text/html"
+
+server = http.createServer (request, response) ->
+
+  console.log("Serving #{request.url}")
+
+  file = path.join('.', request.url)
+  requestExt = path.extname(file)
+  basename = path.basename(file, requestExt)
+  dirname = path.dirname(file, requestExt)
+  if requestExt == '.js' and !fs.existsSync(file)
+    file = path.join(dirname, "#{basename}.coffee")
+    if !fs.existsSync(file)
+      response.writeHead 404
+      return response.end "Not found"
+
+  fs.readFile file, (error, content) ->
+    if error
+      response.writeHead 500
+      response.end "Internal server error: #{error}"
+    ext = path.extname(file)
+    content = coffee.compile(content.toString()) if ext == '.coffee'
+    response.writeHead 200, "Content-Type": contentTypes[ext]
+    response.end content, "utf-8"
+
+server.listen port=8089
+
+testrunner = process.argv[process.argv.length-1]
+
+console.log "Tests running at http://127.0.0.1:#{port}/#{testrunner}"

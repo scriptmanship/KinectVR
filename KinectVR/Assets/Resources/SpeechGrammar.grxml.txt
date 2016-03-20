@@ -1,0 +1,75 @@
+﻿<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootRule">
+    <one-of>
+      <item>
+        <tag>FORWARD</tag>
+        <one-of>
+          <item> forwards </item>
+          <item> forward </item>
+          <item> straight </item>
+          <item> go ahead </item>
+          <item> walk </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>BACK</tag>
+        <one-of>
+          <item> backwards </item>
+          <item> backward </item>
+          <item> go back </item>
+          <item> walk back </item>
+          <item> back </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>LEFT</tag>
+        <one-of>
+          <item> turn left </item>
+          <item> go left </item>
+          <item> left </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>RIGHT</tag>
+        <one-of>
+          <item> turn right </item>
+          <item> go right </item>
+          <item> right </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>RUN</tag>
+        <one-of>
+          <item> run </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>JUMP</tag>
+        <one-of>
+          <item> jump </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>STOP</tag>
+        <one-of>
+          <item> stop </item>
+          <item> halt </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>HELLO</tag>
+        <one-of>
+          <item> hello </item>
+          <item> hi </item>
+          <item> wave </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>MASTER</tag>
+        <one-of>
+          <item> master </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>
