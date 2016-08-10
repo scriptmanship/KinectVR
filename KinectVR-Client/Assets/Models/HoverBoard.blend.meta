@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: 98a8f6928ea5ec146ab94df696f809a5
+timeCreated: 1454156376
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Base
+    100002: Base_001
+    100004: Base_002
+    100006: Base_003
+    100008: Base_004
+    100010: Base_Engines_Round
+    100012: Base_Engines_Round_001
+    100014: Base_Engines_Round_002
+    100016: Base_Engines_Round_Lights
+    100018: Base_Engines_Round_Lights_001
+    100020: Buttons_Panel
+    100022: Buttons_Panel_2
+    100024: Cables
+    100026: Cables_Clips
+    100028: Circle_001
+    100030: Circle_002
+    100032: Circle_003
+    100034: Circle_004
+    100036: Circle_005
+    100038: Circle_006
+    100040: Dof
+    100042: //RootNode
+    100044: Light_Array
+    100046: Plates
+    100048: PowerSource
+    100050: Rear_Engines
+    100052: Thruster_Main_000
+    100054: Thruster_Main_001
+    100056: Thruster_Rim
+    400000: Base
+    400002: Base_001
+    400004: Base_002
+    400006: Base_003
+    400008: Base_004
+    400010: Base_Engines_Round
+    400012: Base_Engines_Round_001
+    400014: Base_Engines_Round_002
+    400016: Base_Engines_Round_Lights
+    400018: Base_Engines_Round_Lights_001
+    400020: Buttons_Panel
+    400022: Buttons_Panel_2
+    400024: Cables
+    400026: Cables_Clips
+    400028: Circle_001
+    400030: Circle_002
+    400032: Circle_003
+    400034: Circle_004
+    400036: Circle_005
+    400038: Circle_006
+    400040: Dof
+    400042: //RootNode
+    400044: Light_Array
+    400046: Plates
+    400048: PowerSource
+    400050: Rear_Engines
+    400052: Thruster_Main_000
+    400054: Thruster_Main_001
+    400056: Thruster_Rim
+    2300000: Base
+    2300002: Base_001
+    2300004: Base_002
+    2300006: Base_003
+    2300008: Base_004
+    2300010: Base_Engines_Round
+    2300012: Base_Engines_Round_001
+    2300014: Base_Engines_Round_002
+    2300016: Base_Engines_Round_Lights
+    2300018: Base_Engines_Round_Lights_001
+    2300020: Buttons_Panel
+    2300022: Buttons_Panel_2
+    2300024: Cables
+    2300026: Cables_Clips
+    2300028: Circle_001
+    2300030: Circle_002
+    2300032: Circle_003
+    2300034: Circle_004
+    2300036: Circle_005
+    2300038: Circle_006
+    2300040: Plates
+    2300042: PowerSource
+    2300044: Rear_Engines
+    2300046: Thruster_Main_000
+    2300048: Thruster_Main_001
+    2300050: Thruster_Rim
+    3300000: Base
+    3300002: Base_001
+    3300004: Base_002
+    3300006: Base_003
+    3300008: Base_004
+    3300010: Base_Engines_Round
+    3300012: Base_Engines_Round_001
+    3300014: Base_Engines_Round_002
+    3300016: Base_Engines_Round_Lights
+    3300018: Base_Engines_Round_Lights_001
+    3300020: Buttons_Panel
+    3300022: Buttons_Panel_2
+    3300024: Cables
+    3300026: Cables_Clips
+    3300028: Circle_001
+    3300030: Circle_002
+    3300032: Circle_003
+    3300034: Circle_004
+    3300036: Circle_005
+    3300038: Circle_006
+    3300040: Plates
+    3300042: PowerSource
+    3300044: Rear_Engines
+    3300046: Thruster_Main_000
+    3300048: Thruster_Main_001
+    3300050: Thruster_Rim
+    4300000: Cables_Clips
+    4300002: Cables
+    4300004: Base_004
+    4300006: Base_003
+    4300008: Buttons_Panel_2
+    4300010: Base_Engines_Round_Lights
+    4300012: Buttons_Panel
+    4300014: Base_002
+    4300016: Base_Engines_Round_002
+    4300018: Base_Engines_Round_001
+    4300020: Base_Engines_Round
+    4300022: PowerSource
+    4300024: Base_001
+    4300026: Rear_Engines
+    4300028: Base_Engines_Round_Lights_001
+    4300030: Circle_002
+    4300032: Thruster_Main_000
+    4300034: Thruster_Main_001
+    4300036: Circle_006
+    4300038: Circle_005
+    4300040: Circle_001
+    4300042: Circle_003
+    4300044: Circle_004
+    4300046: Thruster_Rim
+    4300048: Plates
+    4300050: Base
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

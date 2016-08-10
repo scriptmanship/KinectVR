@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 51e3e0602fc466943bf13defdfe59eab
+timeCreated: 1458178376
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CTRL_F4
+    100002: CTRL_F5
+    100004: CTRL_Finger1
+    100006: CTRL_Finger2
+    100008: CTRL_Finger3
+    100010: F1A
+    100012: F1B
+    100014: F1C
+    100016: F2A
+    100018: F2B
+    100020: F3A
+    100022: F3B
+    100024: F4A
+    100026: F4B
+    100028: F5A
+    100030: F5B
+    100032: Finger4_Deformation
+    100034: Finger5_deformation
+    100036: Hand
+    100038: Hand_Armature
+    100040: //RootNode
+    100042: low
+    400000: CTRL_F4
+    400002: CTRL_F5
+    400004: CTRL_Finger1
+    400006: CTRL_Finger2
+    400008: CTRL_Finger3
+    400010: F1A
+    400012: F1B
+    400014: F1C
+    400016: F2A
+    400018: F2B
+    400020: F3A
+    400022: F3B
+    400024: F4A
+    400026: F4B
+    400028: F5A
+    400030: F5B
+    400032: Finger4_Deformation
+    400034: Finger5_deformation
+    400036: Hand
+    400038: Hand_Armature
+    400040: //RootNode
+    400042: low
+    4300000: low
+    7400000: open
+    7400002: Hand_ArmatureAction
+    7400004: close
+    7400006: closed
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: low
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: open
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hand_Armature
+        weight: 1
+      - path: Hand_Armature/Hand
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger1
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger2
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger3
+        weight: 1
+      - path: Hand_Armature/Hand/F1A
+        weight: 1
+      - path: Hand_Armature/Hand/F1A/F1B
+        weight: 1
+      - path: Hand_Armature/Hand/F1A/F1B/F1C
+        weight: 1
+      - path: Hand_Armature/Hand/F2A
+        weight: 1
+      - path: Hand_Armature/Hand/F2A/F2B
+        weight: 1
+      - path: Hand_Armature/Hand/F3A
+        weight: 1
+      - path: Hand_Armature/Hand/F3A/F3B
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/CTRL_F4
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/F4A
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/F4A/F4B
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/CTRL_F5
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/F5A
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/F5A/F5B
+        weight: 1
+      - path: low
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: close
+      takeName: Default Take
+      firstFrame: 1
+      lastFrame: 39
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hand_Armature
+        weight: 1
+      - path: Hand_Armature/Hand
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger1
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger2
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger3
+        weight: 1
+      - path: Hand_Armature/Hand/F1A
+        weight: 1
+      - path: Hand_Armature/Hand/F1A/F1B
+        weight: 1
+      - path: Hand_Armature/Hand/F1A/F1B/F1C
+        weight: 1
+      - path: Hand_Armature/Hand/F2A
+        weight: 1
+      - path: Hand_Armature/Hand/F2A/F2B
+        weight: 1
+      - path: Hand_Armature/Hand/F3A
+        weight: 1
+      - path: Hand_Armature/Hand/F3A/F3B
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/CTRL_F4
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/F4A
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/F4A/F4B
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/CTRL_F5
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/F5A
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/F5A/F5B
+        weight: 1
+      - path: low
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: closed
+      takeName: Default Take
+      firstFrame: 38
+      lastFrame: 39
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hand_Armature
+        weight: 1
+      - path: Hand_Armature/Hand
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger1
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger2
+        weight: 1
+      - path: Hand_Armature/Hand/CTRL_Finger3
+        weight: 1
+      - path: Hand_Armature/Hand/F1A
+        weight: 1
+      - path: Hand_Armature/Hand/F1A/F1B
+        weight: 1
+      - path: Hand_Armature/Hand/F1A/F1B/F1C
+        weight: 1
+      - path: Hand_Armature/Hand/F2A
+        weight: 1
+      - path: Hand_Armature/Hand/F2A/F2B
+        weight: 1
+      - path: Hand_Armature/Hand/F3A
+        weight: 1
+      - path: Hand_Armature/Hand/F3A/F3B
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/CTRL_F4
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/F4A
+        weight: 1
+      - path: Hand_Armature/Hand/Finger4_Deformation/F4A/F4B
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/CTRL_F5
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/F5A
+        weight: 1
+      - path: Hand_Armature/Hand/Finger5_deformation/F5A/F5B
+        weight: 1
+      - path: low
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .0500000007
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
