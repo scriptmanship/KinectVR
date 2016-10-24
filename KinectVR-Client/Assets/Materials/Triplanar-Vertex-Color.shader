@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 Shader "AAA-Scriptmanship/Triplanar-Vertex-Color" {
 	Properties {
 	_VertexAOMultiplier ("Vertex AO Multiplier", Range (0.0, 1.0)) = 0.5
@@ -43,7 +45,7 @@ Shader "AAA-Scriptmanship/Triplanar-Vertex-Color" {
 		UNITY_INITIALIZE_OUTPUT(Input,o);
 		
 		
-			o.vertWorldNormals = normalize(mul( _Object2World, float4( v.normal, 0.0 ) ).xyz);
+			o.vertWorldNormals = normalize(mul( unity_ObjectToWorld, float4( v.normal, 0.0 ) ).xyz);
 			
 			
 			o.vertColors = v.color;

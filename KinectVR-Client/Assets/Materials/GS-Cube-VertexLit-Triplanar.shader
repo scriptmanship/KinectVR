@@ -1,4 +1,6 @@
-﻿ Shader "Custom/GS-Cube-VertexLit-Triplanar" 
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+ Shader "Custom/GS-Cube-VertexLit-Triplanar" 
  {        
      Properties 
      {
@@ -90,8 +92,8 @@ uniform float4 _Color;
                  // Passing on color to next shader (using .r/.g there as tile coordinate)
                  // Passing on center vertex (tile to be built by geometry shader from it later)
                  o.pos = v.vertex;
-                 o.worldPos = mul(_Object2World, v.vertex).xyz;
-                 o.vertWorldNormals = mul( _Object2World, float4( v.normal, 0.0 ) );	
+                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                 o.vertWorldNormals = mul( unity_ObjectToWorld, float4( v.normal, 0.0 ) );	
                  // Caclulate center vertex light diffuse color and send it to Geometry Shader as COLOR0
 				float4 lighting = float4(ShadeVertexLightsFull(v.vertex, v.normal, 4, true),1);
 				o.diff = lighting * _Color;
@@ -195,7 +197,7 @@ uniform float4 _Color;
                    	
                    	
                    	//pass through vertex shader variables to fragment shader
-	                     v[i].worldPos = vert[0].worldPos+(mul(_Object2World, v[i].pos).xyz)/ _TriplanarScale;
+	                     v[i].worldPos = vert[0].worldPos+(mul(unity_ObjectToWorld, v[i].pos).xyz)/ _TriplanarScale;
 	                     v[i].vertWorldNormals = float4(nc[i],0);
 	                     //pass through center vertex light
 	                     v[i].aodiff = vert[0].diff;

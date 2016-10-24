@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
 Shader "AAA-Scriptmanship/SlopeProjection" {
 	Properties {
 		//_Shininess ("Shininess", Range (0.01, 1)) = 0.078125
@@ -65,7 +67,7 @@ Shader "AAA-Scriptmanship/SlopeProjection" {
 			
 			
 			
-			float3 worldPos = mul (_Object2World, v.vertex).xyz;
+			float3 worldPos = mul (unity_ObjectToWorld, v.vertex).xyz;
 			
 			o.vertPos = worldPos;
 			

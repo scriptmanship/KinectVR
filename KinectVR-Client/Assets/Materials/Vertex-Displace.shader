@@ -1,4 +1,7 @@
-﻿Shader "AAA-Scriptmanship/Vertex-Displace" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
+
+Shader "AAA-Scriptmanship/Vertex-Displace" {
 	Properties {
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5	
@@ -54,12 +57,12 @@
 		
 		float4 tex = tex2Dlod (_HeightmapTex, uv);
 		
-		float4 vertworld = mul(_Object2World, v.vertex);
+		float4 vertworld = mul(unity_ObjectToWorld, v.vertex);
 		
 		float avgcol = (tex.r + tex.g + tex.b)/3;
 		
 		vertworld.y += avgcol*_Displacement;
-		v.vertex = mul(_World2Object, vertworld);
+		v.vertex = mul(unity_WorldToObject, vertworld);
 		
 
 		

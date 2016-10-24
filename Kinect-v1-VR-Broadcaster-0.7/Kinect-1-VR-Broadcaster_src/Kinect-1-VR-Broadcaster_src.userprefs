@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\S_Networking\AliceManager.cs">
+    <Files>
+      <File FileName="Assets\S_Networking\AliceManager.cs" Line="180" Column="6" />
+      <File FileName="Assets\S_Networking\AliceSync.cs" Line="7" Column="2" />
+      <File FileName="Assets\Script\Kinect\KinectWrapper\KinectSensor.cs" Line="23" Column="2" />
+      <File FileName="Assets\Script\Kinect\KinectWrapper\SkeletonWrapper.cs" Line="103" Column="32" />
+      <File FileName="Assets\Script\Kinect\KinectModelControllers\KinectPointController.cs" Line="13" Column="26" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

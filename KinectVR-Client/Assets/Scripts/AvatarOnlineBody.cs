@@ -170,10 +170,12 @@ public class AvatarOnlineBody : MonoBehaviour {
 				relativePos = body.partsDic ["SpineShoulder"].go.transform.position - body.partsDic ["SpineMid"].go.transform.position;
 				rotation = Quaternion.LookRotation(relativePos.normalized, Vector3.forward);
 				spineMid.rotation = rotation * Quaternion.Euler (90f, 0f, 0f);
-
+				//Disable for Kinect v1
+				/*
 				relativePos = body.partsDic ["Head"].go.transform.position - body.partsDic ["Neck"].go.transform.position;
 				rotation = Quaternion.LookRotation(relativePos.normalized, Vector3.forward);
 				head.rotation = rotation * Quaternion.Euler (90f, 0f, 0f);
+				*/
 
 				relativePos = body.partsDic ["ShoulderLeft"].go.transform.position - body.partsDic ["ElbowLeft"].go.transform.position;
 				rotation = Quaternion.LookRotation(relativePos.normalized, Vector3.forward);
@@ -191,7 +193,8 @@ public class AvatarOnlineBody : MonoBehaviour {
 				relativePos = body.partsDic ["ElbowRight"].go.transform.position - body.partsDic ["WristRight"].go.transform.position;
 				rotation = Quaternion.LookRotation(relativePos.normalized, Vector3.forward);
 				elbowRight.rotation = rotation * Quaternion.Euler (270f, 0f, 0f);
-
+				//Disable for Kinect v1
+				/*
 				relativePos = body.partsDic ["WristLeft"].go.transform.position - body.partsDic ["HandTipLeft"].go.transform.position;
 				rotation = Quaternion.LookRotation(relativePos.normalized, Vector3.forward);
 				handLeft.rotation = rotation * Quaternion.Euler (270f, 0f, 0f);
@@ -199,7 +202,7 @@ public class AvatarOnlineBody : MonoBehaviour {
 				relativePos = body.partsDic ["WristRight"].go.transform.position - body.partsDic ["HandTipRight"].go.transform.position;
 				rotation = Quaternion.LookRotation(relativePos.normalized, Vector3.forward);
 				handRight.rotation = rotation * Quaternion.Euler (270f, 0f, 0f);
-
+				*/
 
 
 				relativePos = body.partsDic ["HipLeft"].go.transform.position - body.partsDic ["KneeLeft"].go.transform.position;
@@ -220,7 +223,8 @@ public class AvatarOnlineBody : MonoBehaviour {
 				kneeRight.rotation = rotation * Quaternion.Euler (270f, 0f, 0f);
 
 
-
+				//Disable for Kinect v1
+				/*
 				if (rightHand != null && leftHand != null) {
 					if (body.partsDic ["HandRight"].infered == 0 && body.partsDic ["HandTipRight"].infered == 0) {
 						if (Vector3.Distance (body.partsDic ["HandTipRight"].go.transform.position, body.partsDic ["HandRight"].go.transform.position) < 0.19f) {
@@ -243,6 +247,7 @@ public class AvatarOnlineBody : MonoBehaviour {
 					}
 				}
 
+				*/
 
 
 

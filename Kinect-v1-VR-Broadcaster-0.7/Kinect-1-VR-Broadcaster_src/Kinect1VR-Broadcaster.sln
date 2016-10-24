@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{2E8CF171-2F2C-B427-3A68-3AA9A162D9AD}") = "Kinect1VR-Broadcaster", "Assembly-CSharp.csproj", "{9B280A65-F7A6-854B-A918-5F84019D8009}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B280A65-F7A6-854B-A918-5F84019D8009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B280A65-F7A6-854B-A918-5F84019D8009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B280A65-F7A6-854B-A918-5F84019D8009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B280A65-F7A6-854B-A918-5F84019D8009}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{94117805-564B-DACA-DFDC-7933553EE533}") = "KinectVR-Client", "Assembly-CSharp.csproj", "{2C051ACC-E610-2355-45CD-C437D61B9868}"
+EndProject
+Project("{94117805-564B-DACA-DFDC-7933553EE533}") = "KinectVR-Client", "Assembly-CSharp-Editor.csproj", "{49223CE9-FC80-385C-CDF8-E07307CB9C0F}"
+EndProject
+Project("{94117805-564B-DACA-DFDC-7933553EE533}") = "KinectVR-Client", "Assembly-UnityScript.unityproj", "{CF89C051-3FDC-1F27-C8FE-0499542C7559}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C051ACC-E610-2355-45CD-C437D61B9868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C051ACC-E610-2355-45CD-C437D61B9868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C051ACC-E610-2355-45CD-C437D61B9868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C051ACC-E610-2355-45CD-C437D61B9868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49223CE9-FC80-385C-CDF8-E07307CB9C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49223CE9-FC80-385C-CDF8-E07307CB9C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49223CE9-FC80-385C-CDF8-E07307CB9C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49223CE9-FC80-385C-CDF8-E07307CB9C0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF89C051-3FDC-1F27-C8FE-0499542C7559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF89C051-3FDC-1F27-C8FE-0499542C7559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF89C051-3FDC-1F27-C8FE-0499542C7559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF89C051-3FDC-1F27-C8FE-0499542C7559}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
