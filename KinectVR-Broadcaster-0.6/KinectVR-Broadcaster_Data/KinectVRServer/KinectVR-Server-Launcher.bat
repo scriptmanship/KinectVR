@@ -1,1 +1,0 @@
-cmd /k "%~dp0node.exe %~dp0KinectVRServer.js"
