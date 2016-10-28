@@ -6,30 +6,38 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     3072 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.183 seconds
-Platform assembly: C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\Filip\Desktop\KinectVR-master\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.059 seconds
+Platform assembly: C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Filip\Documents\KinectVR\Kinect-v1-VR-Broadcaster-0.7\Kinect-1-VR-Broadcaster-0.7_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
 desktop: 2560x1440 59Hz; virtual: 4480x1440 at -1920,0
 <RI> Initialized touch support.
-UnloadTime: 0.626172 ms
+UnloadTime: 1.058369 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 5f8 -> priority: 1 
-  Thread -> id: 22f8 -> priority: 1 
+  Thread -> id: 3770 -> priority: 1 
+  Thread -> id: 2280 -> priority: 1 
 Create Body0
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 
+Create Body1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
 Remove Body0
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Remove Body1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
 

@@ -3,7 +3,9 @@ using System.Collections;
 
 public class AvatarOnlineBody : MonoBehaviour {
 
+	//Mixamo rig naming convention, YbotWithHands character leave blank, otherwise default should be namePrefix = "mixamorig:";
 	private string namePrefix = "";
+
 
 	public Transform avatar;
 	public OnlineBody body;
